@@ -1,5 +1,5 @@
 import { Box, Typography, FormControl, FormHelperText,
-  TextField, TextareaAutosize, Stack, Select, MenuItem, Button, padding } from '@pankod/refine-mui';
+  TextField, TextareaAutosize, Stack, Select, MenuItem, Button } from '@pankod/refine-mui';
 
 import { FormProps } from 'interfaces/common';
 import CustomButton from './CustomButton';
@@ -95,10 +95,10 @@ const Form = ({ type, register, handleSubmit, handleImageChange, formLoading, on
                required
                inputProps={{ 'aria-label': 'Without label' }}
                defaultValue='apartment'
-               {...register('propertType', { required: true })}
+               {...register('propertyType', { required: true })}
               >
                 <MenuItem
-                  value= 'apartement'
+                  value= 'apartment'
                 >
                   Apartment
                 </MenuItem>
@@ -211,13 +211,13 @@ const Form = ({ type, register, handleSubmit, handleImageChange, formLoading, on
                 Upload *
                 <input
                   hidden
-                  accept='image/*'
-                  type='filr'
-                  onChange={(e) => {
-                    // @ts-ignore
-                    handleImageChange(e.target.files[0])
+                  accept="image/*"
+                  type="file"
+                  onChange={(
+                    e: React.ChangeEvent<HTMLInputElement>,
+                  ) => {
+                  handleImageChange(e.target.files![0]);
                   }}
-                
                 />
               </Button>
               <Typography
