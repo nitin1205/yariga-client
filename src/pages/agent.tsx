@@ -8,10 +8,7 @@ const Agent = () => {
     resource: 'users'
   });
 
-  const agents = data?.data ?? [];
-  // @ts-ignore
-  const { users } = { ...agents }
-  const allAgents = users;
+  const allAgents = data?.data ?? [];
   
   if(isLoading) return <div>Loading...</div>
   if(isError) return <div>Error...</div>

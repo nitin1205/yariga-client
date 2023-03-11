@@ -22,8 +22,6 @@ const AllProperties = () => {
   } = useTable();
 
   const allProperties = data?.data ?? [];
-  // @ts-ignore
-  const { properties } =  { ...allProperties };
 
   const currentPrice = sorter.find((item) => item.field === 'price')?.order;
 
@@ -162,9 +160,7 @@ const AllProperties = () => {
         }}
       >
         
-        { 
-        // @ts-ignore
-        properties?.map((property) => (
+        {allProperties?.map((property) => (
           <PropertyCard
             key={property._id}
             id={property._id}
@@ -176,7 +172,7 @@ const AllProperties = () => {
           ))}
       </Box>
 
-      {properties.length > 0 && (
+      {allProperties.length > 0 && (
         <Box
           display='flex'
           gap={2}
